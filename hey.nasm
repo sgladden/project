@@ -12,6 +12,10 @@ shellcode:
 	pop ecx
 
 	xor eax, eax 
+	xor ebx, ebx
+	xor ecx, ecx
+	xor edx, edx
+	pop ecx
         mov al, 0x4
         add ebx, 0x1
 	mov edx, ebx
@@ -19,12 +23,13 @@ shellcode:
         int 0x80
 
 	xor eax, eax
-        add eax, 0x1
 	xor ebx, ebx
+	mov eax, 0x1
+	mov ebx, 0x5
         int 0x80
 
 call_shellcode:
 	call shellcode
-	message: db "Shane Gladden"
+	db "Shane Gladden"
 
  
