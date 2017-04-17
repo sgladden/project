@@ -23,8 +23,7 @@ shellcode:
 
 	xor eax, eax
 	xor ebx, ebx
-	mov eax, 0x1
-	mov ebx, 0x5
+	mov al, 0x1
         int 0x80
 
 call_shellcode:
