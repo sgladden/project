@@ -9,7 +9,6 @@ section .text
 	jmp short call_shellcode
 
 shellcode:
-	pop ecx
 
 	xor eax, eax 
 	xor ebx, ebx
@@ -22,9 +21,9 @@ shellcode:
         int 0x80
 
 	xor eax, eax
-	xor ebx, ebx
 	mov al, 0x1
-        int 0x80
+	xor ebx, ebx
+	int 0x80
 
 call_shellcode:
 	call shellcode
