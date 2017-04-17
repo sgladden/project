@@ -15,11 +15,10 @@ shellcode:
 	xor ebx, ebx
 	xor ecx, ecx
 	xor edx, edx
-	pop ecx
         mov al, 0x4
-        add ebx, 0x1
-	mov edx, ebx
-        add edx, 12
+        mov bl, 0x1
+	pop ecx
+        mov dl, 14
         int 0x80
 
 	xor eax, eax
